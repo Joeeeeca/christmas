@@ -1,0 +1,194 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-color:Red;
+}
+
+#hero {
+    position:relative;
+    overflow:hidden;
+    background-image: url('assets/Snowy-mountains.jpg');
+    height:100vh;
+}
+
+@keyframes snow {
+    0% { top: -10px; opacity:0.7;}
+    100% { top: 100vh; opacity: 0.3};
+}
+
+.snowflake {
+    position:absolute;
+    width:8px;
+    height:8px;
+    background-color:#fff;
+    border-radius: 50%;
+    animation: snow linear infinite;
+}
+
+.sleigh {
+    position: absolute;
+    top: 50%;
+    left: -200px;
+    transform: translateY(0%);
+    animation: moveAcross 8s ease-in-out forwards;
+    display:flex;
+    flex-direction:row-reverse;
+    align-items: center;
+    gap:20px;
+}
+
+.moving-graphic {
+    height: auto;
+}
+
+.banner {
+    display: inline-block;
+    margin-left: 20px; /* space between sleigh and banner */
+    background-color: red;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-family: "Arial", sans-serif;
+}
+
+
+
+@keyframes moveAcross {
+    0% {
+        left: -400px;
+        transform: translate(-50%, 0);
+    }
+
+    20% {
+        transform: translate(-50%, -80px);
+    }
+
+40% {
+    transform: translate(-50%, 0);
+}
+
+
+60% {
+    transform: translate(-50%, -80px);
+}
+
+80% {
+    transform: translate(-50%, 0px);
+}
+
+    100% {
+        left:110vw;
+        transform: translate(-50%, 0);
+        display:none;
+    }
+}
+
+
+
+.animated-container {
+    position:relative;
+    width: 100vw;
+    height:100vh;
+    overflow:hidden;
+}
+
+.snowman {
+    position:absolute;
+    left:-350px;
+bottom:0%;
+    transform:translateY(-38%);
+    width:250px;
+    height:auto;
+    animation: moveSnowman 8s ease-in-out forwards;
+    animation-delay: 7s;
+}
+
+.pushed-image {
+    position:absolute;
+    top:50%;
+    bottom:0%;
+    left:-400px;
+    width:400px;    
+    animation: moveImage 8s ease-in-out forwards;
+    animation-delay: 8s;
+}
+
+@keyframes moveSnowman {
+    0% {
+        left: -350px;
+    }
+
+    50% {
+        left:15%;
+    }
+
+    100% {
+        left:22.8%;
+    }
+}
+
+@keyframes moveImage {
+    0% {
+        left: -200px;
+    }
+
+    50% {
+        left:30%;
+    }
+
+    100% {
+        left:38%;   
+    }
+}
+
+.animation-container:hover .pushed-image {
+    left:50%;
+}
+
+#hero h1 {
+    font-size:3rem;
+    color: #fff;
+    text-align:Center;
+    margin-top:80px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    font-family:'Georgia', serif;
+}
+
+#hero p {
+    font-size:1.5rem;
+    color: #ffebcd;
+    text-align:Center;
+    margin:20px auto;
+    max-width:600px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    font-family: 'Arial', sans-serif;
+}
+
+#hero button {
+    display:block;
+    margin:30px auto;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #b30000, #ffcc00, #006400);
+    background-size: 200% 200%;
+    background-position: left center;
+    color:White;
+    border:none;
+    border-radius:30px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    cursor:pointer;
+    transition: transform 0.3s ease, background-position 0.3s ease;
+    font-family: 'Arial Black', sans-serif;
+}
+
+#hero button:hover {
+background-position: right center;
+transform:scale(1.3);
+}
+
